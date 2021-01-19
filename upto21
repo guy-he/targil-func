@@ -1,0 +1,199 @@
+package com.company;
+
+import java.lang.module.FindException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+
+   static String magicWord = "blaaaaaaa";
+    static Scanner s = new Scanner(System.in);
+    static Random r = new Random();//789
+    private static void sum(int a){
+        int sum = 0;
+        int x = a;
+        for (int i =0; i < String.valueOf(a).length() ;i++ ){
+            sum = sum + x%10;
+            x /= 10;
+        }
+        System.out.println(sum);
+    }
+    private static void setZero(int[] array){
+        for (int i = 0; i < array.length; i++){
+            if (array[i] % 2 != 0){
+                array[i] = 0;
+                System.out.println(array[i]);
+            }
+            else {
+                System.out.println(array[i]);
+            }
+        }
+
+    }
+    private static void addOne(int[]array){
+        int g = array[array.length-1];
+        g++;
+        System.out.println(g);
+    }
+    private static void multiplyBy2IfZugi(int[]arr1){
+        for (int i = 0; i < arr1.length; i++){
+            if (arr1[i] % 2 == 0){
+                arr1[i]*=2;
+                System.out.println(arr1[i]);
+            }
+            else {
+                System.out.println(arr1[i]);
+            }
+        }
+    }
+    private static void changeWord (String re){
+        magicWord = re;
+
+    }
+    private static void printWord(){
+        System.out.println(magicWord);
+    }
+    private static void sulamoit(){
+        System.out.println("#");
+    }
+    private static void astrix() {
+        System.out.print("**");
+    }
+
+
+
+    private static void shtrudelSign (String receive){
+        receive = receive + " @@@";
+        System.out.print(receive);
+        astrix();
+        sulamoit();
+    }
+    private static int randomize(int[] ar) {
+        // array 4, 5, 9
+        int p = r.nextInt(ar.length);
+        System.out.println(ar[p]);
+        return ar[p];
+    }
+
+    private static void numberType(float a) {
+        System.out.println("float");
+    }
+
+    private static void numberType(double a) {
+        System.out.println("double");
+    }
+
+    private static void numberType(int a) {
+        System.out.println("int");
+    }
+
+    private static void world() {
+        System.out.println("world");
+    }
+
+    private static void hello() {
+        System.out.println("hello");
+        world();
+    }
+
+    private static boolean isNumberInArray(int[] arrays, int a) {
+        for (int index = 0; index < arrays.length; index++) {
+            if (arrays[index] == a) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    private static double avg(int a, int b, int c) {
+        System.out.println(String.format("(%d + %d + %d) / 3 = %f", a, b, c, (a + b + c) / 3.0));
+        return (a + b + c) / 3.0;
+    }
+
+    private static void calc(int a, int b, char c) {
+        switch (c) {
+            case '+':
+                System.out.println(String.format("%d + %d = %d", a, b, a + b));
+                break;
+            case '-':
+                System.out.println(String.format("%d - %d = %d", a, b, a - b));
+                break;
+        }
+
+
+    }
+
+    private static void multiply(int a, int b) {
+        System.out.println(String.format("%d * %d = %d", a, b, a * b));
+    }
+
+    private static void changeNumber(int a) {
+        a++;
+
+    }
+
+    private static void printNum(int a) {
+        System.out.println(a);
+
+    }
+
+    private static void greet() {
+        System.out.println("good morning!");
+    }
+
+    public static void main(String[] args) {
+
+        greet();//3
+
+        printNum(3);//4
+
+        for (int index = 1; index <= 10; index++) {
+            printNum(index);
+        }
+
+        int k = 5;
+
+        changeNumber(k);
+        System.out.println(k);
+
+        multiply(5, 4);
+        multiply(3, 6);
+        multiply(7, 5);
+        calc(4, 6, '+');
+        avg(10, 7, 5);
+        numberType(4);
+        int[] arrayr = {4, 5, 7, 9};
+        System.out.println("randomize");
+        int rnd = randomize(arrayr);
+        System.out.println("the wining numbers are! :");
+        int[] lotto = new int[6];
+            for (int index = 0; index < lotto.length; index++) {
+                lotto[index] = r.nextInt(37+1);
+                System.out.print(lotto[index]);
+                System.out.print(" ");
+            }
+        System.out.println();
+        System.out.println("and the strong number is :");
+           int raa = r.nextInt(7 )+1;
+        System.out.println(raa);
+
+        shtrudelSign("hello bitches");
+        changeWord("changed!");
+        System.out.println(magicWord);
+
+        int[] t20 = {2 ,6 ,7 ,8 ,34 ,16};
+
+
+        setZero(t20);
+
+       //int h = 524%10;=4
+       // int h = 524/100;=5
+        System.out.println("sum");
+        sum(789);
+
+      }
+
+    }
+
